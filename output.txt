@@ -1,0 +1,17 @@
+    minimum source weight = 1.0000E+00    maximum source weight = 1.0000E+00
+ source    1  0.000+00  0.000+00  0.000+00  5.085-01  4.733-01  7.193-01 1.400+01 1.000+00   particle= neutron       2                   
+ source    1  0.000+00  0.000+00  0.000+00  8.952-01 -4.447-01 -2.944-02 1.400+01 1.000+00   particle= neutron       2                   
+ source    1  0.000+00  0.000+00  0.000+00 -6.184-01 -4.495-01  6.446-01 1.400+01 1.000+00   particle= neutron       4                   
+ source    1  0.000+00  0.000+00  0.000+00  9.710-01 -5.665-02 -2.323-01 1.400+01 1.000+00   particle= neutron       2                   
+ source    1  0.000+00  0.000+00  0.000+00  5.861-01  1.496-01 -7.963-01 1.400+01 1.000+00   particle= neutron       4                   
+ source    1  0.000+00  0.000+00  0.000+00 -6.489-02 -1.626-01  9.845-01 1.400+01 1.000+00   particle= neutron       2                   
+ source    1  0.000+00  0.000+00  0.000+00 -7.068-02  3.263-02 -9.970-01 1.400+01 1.000+00   particle= neutron       2                   
+ source    1  0.000+00  0.000+00  0.000+00 -3.915-01  4.664-01 -7.932-01 1.400+01 1.000+00   particle= neutron       2                   
+ source    1  0.000+00  0.000+00  0.000+00 -2.368-01  9.215-01 -3.079-01 1.400+01 1.000+00   particle= neutron       2                   
+ source    1  0.000+00  0.000+00  0.000+00  1.946-01 -3.204-01  9.271-01 1.400+01 1.000+00   particle= neutron       2                   
+                                 (per source particle)                                           (per source particle)
+ source                 100    1.0000E+00    1.4000E+01          escape                  85    7.3079E-01    5.5802E+00
+   neutron tracks per source particle     1.0000E+00          escape            1.0629E+03          tco   1.0000E+33
+   neutron collisions per source particle 4.2930E+01          capture           9.4030E+03          eco   0.0000E+00
+ source particles per minute            6.0000E+03
+ range of sampled source weights = 1.0000E+00 to 1.0000E+00
