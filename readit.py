@@ -23,19 +23,15 @@ def readit(filename):
 	return event_log
 
 def structure(filename):
-	event_log = readit(filename)
-	i = 1
-	j=1
-	sad = {}
-	while i <= len(event_log):
-		events = []
-		while j < len(event_log['particle'+str(i)]):
-			dp = event_log['particle'+str(i)][j].split()
-			events.append({'cell': dp[1], 'x': dp[2], 'y': dp[3], 'z': dp[4], 'u':dp[5], 'v': dp[6], 'w': dp[7], 'erg' :dp[8], 'wgt':dp[9]})
-			j=j+1	
-		sad.update({'particle'+str(i): events})		
-		i=i+1
-	return(sad)
+	particle_data = readit(filename)
+
+	event_log = {}
+	for elog in particle_data:
+		event_log[elog] = []
+		for line in particle_data[elog]:
+			dp = line.split()
+			event_log[elog].append({'int': dp[0],'cell': dp[1],'x': dp[2],'y': dp[3],'z': dp[4],'u': dp[5],'v': dp[6],'w': dp[7],'erg': dp[8], 'wgt': dp[9]})
+	return(event_log)
 
 def vtk_file(events, event_title):
 
@@ -53,9 +49,7 @@ def vtk_file(events, event_title):
 	vtk_file.write("LINES " + str(num_lines) + " " + str(3*num_lines) + "\n")
 	for i in range(num_events-1):
 		vtk_file.write("2 " + str(i) + " " + str(i+1) + "\n")
-	vtk_file.write("CELL_DATA " + str(num_lines) + "\n")
-	vtk_file.write("scalars cellvar float\nLOOKUP_TABLE default\n")
-	vtk_file.write("2.0 2.4 2.1 2.2 2.3\n")
+	vtk_file.write("CELL_DATA 1\n")
 	vtk_file.write("POINT_DATA " + str(num_events) + "\n")
 	vtk_file.write("scalars pointvar float\nLOOKUP_TABLE default\n")
 	vtk_file.write("1.2 1.3 1.4 1.5")
