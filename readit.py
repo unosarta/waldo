@@ -60,6 +60,6 @@ def vtk_file(events, event_title):
 	vtk_file.write("1.2 1.3 1.4 1.5")
 
 def vtk_builder(readable):
-	for event_titles in readable
+	for event_titles in readable:
 		vtk_file(readable[event_titles], event_titles)
 	
