@@ -1,5 +1,23 @@
 import pdb
 import itertools as it
+
+def scinot(string):
+	"""Takes a string in MCNP scientific notation (without 'E' character), and returns a string of standard scientific notation."""
+	"""If there is no '+' or '-' character in string, returns it as it is."""
+	"""If the argument is not string, returns the argument"""
+	if type(string) != str:
+		return string
+	else:
+		retstr = string[0]
+		for char in string[1:]:
+			if ((char == '-')|(char == '+')):
+				retstr += 'E' + char
+			else:
+				retstr += char
+		
+		return retstr
+
+
 def readit(filename):
 
 	data = open(filename, 'r+')
@@ -30,7 +48,18 @@ def structure(filename):
 		event_log[elog] = []
 		for line in particle_data[elog]:
 			dp = line.split()
-			event_log[elog].append({'int': dp[0],'cell': dp[1],'x': dp[2],'y': dp[3],'z': dp[4],'u': dp[5],'v': dp[6],'w': dp[7],'erg': dp[8], 'wgt': dp[9]})
+			event = {}
+			event.update({'int': scinot(dp[0])})
+			event.update({'cell': scinot(dp[1])})
+			event.update({'x': scinot(dp[2])})
+			event.update({'y': scinot(dp[3])})
+			event.update({'z': scinot(dp[4])})
+			event.update({'u': scinot(dp[5])})
+			event.update({'v': scinot(dp[6])})
+			event.update({'w': scinot(dp[7])})
+			event.update({'erg': scinot(dp[8])})
+			event.update({'wgt': scinot(dp[9])})
+			event_log[elog].append(event)
 	return(event_log)
 
 def vtk_file(events, event_title):
